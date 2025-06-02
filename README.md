@@ -9,13 +9,7 @@ If you use NPM, `npm install d3-geo-scale-bar`. Otherwise, download the [latest 
 ```js
 import { geoHemispheres } from "d3-geo-hemispheres"
 
-const projection = geoHemispheres()
-  // overlap - Percentage bottom map overlaps top - 0.15 is default
-  .overlap(0.15)
-  // rotate - Like a normal D3 projection - 110 is default lambda, -70 works nicely too
-  .rotate([110, 0, 0]) 
-  // width - No need for fitSize because we are sizing by the clientWidth
-  .width(width);
+const projection = geoHemispheres();
 ```
 
 ## API Reference
