@@ -37,3 +37,7 @@ You should calculate the height with:
 ```js
 const height = projection.width() * (2 - projection.overlap());
 ```
+
+## Credits
+
+Thank you to [Niko Kommenda](https://github.com/tinius) for introducing me to this idea and to [Philippe Rivière](https://github.com/fil) for implementing the projection in D3.
