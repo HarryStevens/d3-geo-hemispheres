@@ -18,7 +18,7 @@ const config = {
     format: "umd",
     indent: false,
     extend: true,
-    banner: `// ${meta.homepage} v${meta.version} Copyright ${copyright}`,
+    banner: `// v${meta.version} Copyright ${copyright}`,
     globals: Object.assign({}, ...Object.keys(meta.dependencies || {}).filter(key => /^d3-/.test(key)).map(key => ({[key]: "d3"})))
   },
   plugins: []
