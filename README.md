@@ -9,7 +9,7 @@ If you use NPM, `npm install d3-geo-hemispheres`. Otherwise, download the [lates
 ```js
 import { geoHemispheres } from "d3-geo-hemispheres"
 
-const projection = geoHemispheres();
+const projection = geoHemispheres()
 ```
 
 ## API Reference
@@ -35,5 +35,5 @@ If <i>width</i> is specified, sets the width of the map. If <i>width</i> is not 
 You should calculate the height with:
 
 ```js
-const height = projection.width() * (2 - projection.overlap());
+const height = projection.width() * (2 - projection.overlap())
 ```
