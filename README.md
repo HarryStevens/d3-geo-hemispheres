@@ -30,7 +30,7 @@ If <i>overlap</i> is specified, sets the share of the top hemisphere that is cov
 
 <a name="hemispheres_width" href="#hemispheres_width">#</a> <i>hemispheres</i>.<b>width</b>([<i>width</i>])
 
-If <i>width</i> is specified, sets the width of the map. If <i>width</i> is not specified, returns the current width, which defaulst to 100.
+If <i>width</i> is specified, sets the width of the map. If <i>width</i> is not specified, returns the current width, which defaults to 100.
 
 You should calculate the height with:
 
