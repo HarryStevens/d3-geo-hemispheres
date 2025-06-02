@@ -1,0 +1,54 @@
+{
+  "name": "d3-geo-hemispheres",
+  "version": "0.0.1",
+  "description": "A map projection for a vertical world.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HarryStevens/d3-geo-hemispheres.git"
+  },
+  "keywords": [
+    "d3",
+    "d3-module",
+    "geo",
+    "maps",
+    "cartography",
+    "projection"
+  ],
+  "author": {
+    "name": "Harry Stevens",
+    "url": "https://harryjstevens.com/"
+  },
+  "license": "ISC",
+  "type": "module",
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
+  "module": "src/index.js",
+  "main": "src/index.js",
+  "jsdelivr": "dist/d3-geo-hemispheres.min.js",
+  "unpkg": "dist/d3-geo-hemispheres.min.js",
+  "exports": {
+    "umd": "./dist/d3-geo-hemispheres.min.js",
+    "default": "./src/index.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "d3-geo-polygon": "^2.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "0.4",
+    "eslint": "8",
+    "mocha": "10",
+    "rollup": "3"
+  },
+  "scripts": {
+    "test": "mocha 'test/**/*-test.js' && eslint src test",
+    "prepublishOnly": "rm -rf dist && rollup -c",
+    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
