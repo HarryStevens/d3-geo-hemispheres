@@ -4,7 +4,7 @@ A map projection compatible with [d3-geo](https://d3js.org/d3-geo) for drawing a
 
 ## Installing
 
-If you use NPM, `npm install d3-geo-hemispheres`. Otherwise, download the [latest release](https://github.com/HarryStevens/d3-geo-hemispheres/raw/main/dist/d3-geo-hemispheres.zip).
+If you use NPM, `npm install d3-geo-hemispheres`.
 
 ```js
 import { geoHemispheres } from "d3-geo-hemispheres";
