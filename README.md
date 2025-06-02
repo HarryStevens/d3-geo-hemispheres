@@ -4,7 +4,7 @@ A map projection compatible with [d3-geo](https://d3js.org/d3-geo) for drawing a
 
 ## Installing
 
-If you use NPM, `npm install d3-geo-hemispheres`. Otherwise, download the [latest release](https://github.com/HarryStevens/d3-geo-hemispheres/raw/master/build/d3-geo-hemispheres.zip).
+If you use NPM, `npm install d3-geo-hemispheres`. Otherwise, download the [latest release](https://github.com/HarryStevens/d3-geo-hemispheres/raw/main/dist/d3-geo-hemispheres.zip).
 
 ```js
 import { geoHemispheres } from "d3-geo-hemispheres";
@@ -16,7 +16,7 @@ const projection = geoHemispheres();
 
 The projection works like a [d3-geo projection](https://d3js.org/d3-geo/projection) with exceptions noted below.
 
-<a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>(<i>raw</i>) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/master/src/index.js)
+<a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>(<i>raw</i>) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/main/src/index.js)
 
 <img src="img/hemispheres.png" width="300" height="448">
 
