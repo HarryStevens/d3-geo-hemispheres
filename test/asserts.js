@@ -1,3 +1,5 @@
+/* eslint-env mocha */
+
 // See https://github.com/d3/d3-geo-projection/blob/main/test/asserts.js
 import assert from "assert";
 
