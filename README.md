@@ -24,7 +24,7 @@ The projection works like a [d3-geo projection](https://d3js.org/d3-geo/projecti
 
 <a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>(<i>raw</i>) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/master/src/index.js)
 
-<img src="https://raw.githubusercontent.com/HarryStevens/d3-geo-hemispheres/refs/heads/main/img/hemispheres.png" width="300" height="448">
+<img src="img/hemispheres.png" width="300" height="448">
 
 The stacked hemispheres projection with <i>overlap</i> of 0.15 and <i>rotate</i> of [110, 0, 0].
 
