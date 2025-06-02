@@ -7,9 +7,9 @@ A map projection compatible with [d3-geo](https://d3js.org/d3-geo) for drawing a
 If you use NPM, `npm install d3-geo-hemispheres`. Otherwise, download the [latest release](https://github.com/HarryStevens/d3-geo-hemispheres/raw/master/build/d3-geo-hemispheres.zip).
 
 ```js
-import { geoHemispheres } from "d3-geo-hemispheres"
+import { geoHemispheres } from "d3-geo-hemispheres";
 
-const projection = geoHemispheres()
+const projection = geoHemispheres();
 ```
 
 ## API Reference
@@ -35,5 +35,5 @@ If <i>width</i> is specified, sets the width of the map. If <i>width</i> is not 
 You should calculate the height with:
 
 ```js
-const height = projection.width() * (2 - projection.overlap())
+const height = projection.width() * (2 - projection.overlap());
 ```
