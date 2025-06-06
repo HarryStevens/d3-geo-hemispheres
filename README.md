@@ -12,13 +12,15 @@ import { geoHemispheres } from "d3-geo-hemispheres";
 const projection = geoHemispheres();
 ```
 
+[Try d3-geo-hemispheres in your browser](https://observablehq.com/@harrystevens/d3-geo-hemispheres).
+
 ## API Reference
 
 The projection works like a [d3-geo projection](https://d3js.org/d3-geo/projection) with exceptions noted below.
 
 <a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>([<i>raw</i>]) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/main/src/index.js)
 
-<img src="img/hemispheres.png" width="300" height="448">
+[<img src="img/hemispheres.png" width="300" height="448">](https://observablehq.com/@harrystevens/d3-geo-hemispheres)
 
 The stacked hemispheres projection with <i>overlap</i> of 0.15 and <i>rotate</i> of [110, 0, 0].
 
