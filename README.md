@@ -16,7 +16,7 @@ const projection = geoHemispheres();
 
 The projection works like a [d3-geo projection](https://d3js.org/d3-geo/projection) with exceptions noted below.
 
-<a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>(<i>raw</i>) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/main/src/index.js)
+<a name="geoHemispheres" href="#geoHemispheres">#</a> d3.<b>geoHemispheres</b>([<i>raw</i>]) · [Source](https://github.com/HarryStevens/d3-geo-hemispheres/blob/main/src/index.js)
 
 <img src="img/hemispheres.png" width="300" height="448">
 
