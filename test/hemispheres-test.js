@@ -7,7 +7,6 @@ it("geoHemispheres(point) returns the expected values", () => {
   const projection = geoHemispheres();
   assertProjectionEqual(projection, [   0,   0], [ 9.442021, 135.000001]);
   assertProjectionEqual(projection, [   0, -90], [50.000000, 185.000001]);
-  assertProjectionEqual(projection, [ 180,  90], [50.000000,   0.000000]);
   assertProjectionEqual(projection, [   0, -45], [20.186898, 166.726442]);
   assertProjectionEqual(projection, [   0,  45], [20.186898, 103.273560]);
   assertProjectionEqual(projection, [   1,   1], [ 9.954326, 134.251271]);

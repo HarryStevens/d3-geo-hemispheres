@@ -24,7 +24,7 @@ The projection works like a [d3-geo projection](https://d3js.org/d3-geo/projecti
 
 The stacked hemispheres projection with <i>overlap</i> of 0.15 and <i>rotate</i> of [110, 0, 0].
 
-You can pass a symmetrical [<i>raw</i> projection](https://d3js.org/d3-geo/projection#raw-projections), such as d3.geoAzimuthalEqualAreaRaw, d3.geoAzimuthalEquidistantRaw, d3.geoOrthographicRaw, or d3.geoStereographicRaw.
+You can pass a symmetrical [<i>raw</i> projection](https://d3js.org/d3-geo/projection#raw-projections), such as d3.geoAzimuthalEqualAreaRaw, d3.geoAzimuthalEquidistantRaw, d3.geoOrthographicRaw, d3.geoStereographicRaw or [d3.geoCrasterRaw](https://github.com/d3/d3-geo-projection?tab=readme-ov-file#geoCrasterRaw).
 
 <a name="hemispheres_overlap" href="#hemispheres_overlap">#</a> <i>hemispheres</i>.<b>overlap</b>([<i>overlap</i>])
 

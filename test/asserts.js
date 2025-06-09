@@ -10,9 +10,9 @@ export function assertProjectionEqual(projection, location, point) {
   const inverted = projection.invert(point);
   
   assert(
-    planarEqual(projection(location), point, 1e-6) &&
+    planarEqual(projected, point, 1e-6) &&
     projection.invert(projected) ? sphericalEqual(inverted, location, 1e-3) : true, 
-    `${[inverted, projection(location)]} should be projected equivalents; expected: ${[location, point]}`
+    `${[inverted, projected]} should be projected equivalents; expected: ${[location, point]}`
   );
 }
 

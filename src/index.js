@@ -1,10 +1,9 @@
 import { geoAzimuthalEqualAreaRaw, geoCircle, geoProjection } from "d3-geo";
 import { geoClipPolygon } from "d3-geo-polygon";
 
-const { abs, cos, PI, pow, sign, sqrt } = Math;
+const { abs, cos, PI, sign } = Math;
 
-const distance = ([x1, y1], [x2, y2]) => sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)),
-      epsilon = 1e-6,
+const epsilon = 1e-6,
       valid = x => typeof x === "number" && !isNaN(x);
 
 export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
@@ -13,6 +12,7 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
   let width = 100;
 
   const dy = 2 * raw(0, PI / 2)[1];
+  
   const raw2 = (lambda, phi) => {
     if (cos(lambda) > 0) {
       const p = raw(lambda, phi);
@@ -20,6 +20,26 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
     }
     return raw(lambda - PI * sign(lambda), phi);
   };
+
+  raw2.invert = (x, y) => {
+    // bottom?
+    {
+      const [l, p] = raw.invert(x, y);
+      if (abs(l) < PI / 2 && abs(p) < PI / 2) {
+        const [x2, y2] = raw2(l + PI, p);
+        if (abs(x - x2) + abs(y - y2) < 1e-2) return [l + PI, p];
+      }
+    }
+
+    // top?
+    {
+      const [l, p] = raw.invert(x, y - (1 - overlap) * dy);
+      const [x1, y1] = raw2(l, p);
+      if (abs(x - x1) + abs(y - y1) < 1e-2) return [l, p];
+    }
+  };
+    
+
   const projection = geoProjection(raw2);
   const _fitSize = projection.fitSize;
   const _preclip = projection.preclip;
@@ -62,28 +82,8 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
   rebuild();
 
   projection.overlap = n => valid(n) ? (overlap = n, rebuild(), projection) : overlap;
-  
   projection.rotate = r => Array.isArray(r) && r.every(valid) ? (rotate = r, rebuild(), projection) : rotate;
-  
   projection.width = n => valid(n) ? (width = n, rebuild(), projection) : width;
-
-  projection.invert = p => {
-    const r = width / 2;
-    const cy = 3 * r - width * overlap;
-    const useBottom = distance(p, [ r, cy ]) < r;
-
-    if (!useBottom && distance(p, [ r, r ]) > r) return null;
-  
-    const proj = geoProjection(raw)
-      .rotate(useBottom
-        ? [rotate[0] - 180, rotate[1], rotate[2]]
-        : rotate
-      )
-      .translate([ r, useBottom ? cy : r ])
-      .scale(width / dy);
-  
-    return proj.invert(p);
-  };
   
   return projection;
 }
