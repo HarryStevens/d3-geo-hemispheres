@@ -22,7 +22,7 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
   };
 
   raw2.invert = (x, y) => {
-    // bottom?
+    // bottom
     {
       const [l, p] = raw.invert(x, y);
       if (abs(l) < PI / 2 && abs(p) < PI / 2) {
@@ -31,7 +31,7 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
       }
     }
 
-    // top?
+    // top
     {
       const [l, p] = raw.invert(x, y - (1 - overlap) * dy);
       const [x1, y1] = raw2(l, p);
@@ -39,7 +39,6 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
     }
   };
     
-
   const projection = geoProjection(raw2);
   const _fitSize = projection.fitSize;
   const _preclip = projection.preclip;
@@ -71,7 +70,7 @@ export function geoHemispheres(raw = geoAzimuthalEqualAreaRaw) {
         geoCircle().center([-180, 0]).radius(90 - epsilon)().coordinates,
         [clip]
       ]
-    }
+    };
     
     _preclip.call(projection, geoClipPolygon(clipGeo));
     _fitSize.call(projection, [width, width * 2], { type: "Sphere" });
