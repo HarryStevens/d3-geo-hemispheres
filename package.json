@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-hemispheres",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A map projection for a vertical world.",
   "repository": {
     "type": "git",
